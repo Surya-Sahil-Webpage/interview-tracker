@@ -21,7 +21,7 @@ class CompanyUpdate(BaseModel):
 
 
 class CompanyResponse(CompanyBase):
-    id: id
+    id: int
     status: CompanyStatus
     created_at: datetime
     updated_at: datetime
