@@ -25,7 +25,7 @@ class InterviewRound(Base):
     __tablename__ = "interview_rounds"
 
     id = Column(Integer, primary_key=True, index=True)
-    company_id = Column(Integer, ForeignKey("companies.id"), nullable=False)
+    company_id = Column(Integer, ForeignKey("companies.id", ondelete="CASCADE"), nullable=False)
     round_number = Column(Integer, nullable=False)
     round_type = Column(Enum(RoundType), nullable=False)
     scheduled_date = Column(Date, nullable=True)
