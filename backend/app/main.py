@@ -3,9 +3,10 @@ load_dotenv()
 
 from fastapi import FastAPI
 from app import models
-from app.api import companies, rounds
+from app.api import companies, rounds, auth
 
 app = FastAPI(title="Interview Tracker API")
+app.include_router(auth.router)
 app.include_router(companies.router)
 app.include_router(rounds.router)
 
